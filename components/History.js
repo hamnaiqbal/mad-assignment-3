@@ -28,7 +28,6 @@ export default function History({ navigation, route }) {
 
   return (
     <View style={styles.mainView}>
-      <StatusBar backgroundColor="#196F3D" />
 
       <DataTable>
         <DataTable.Header>
@@ -65,16 +64,14 @@ export default function History({ navigation, route }) {
       <Modal animationType="fade" transparent={true} visible={showModal}>
         <View style={styles.flexCentered}>
           <View style={styles.modal}>
-            <Text style={styles.modalHeading}>Are you Sure?</Text>
-            <Text style={{ color: '#E74C3C' }}>Do you really want to delete history?</Text>
-
+            <Text style={styles.modalHeading}>Delete History?</Text>
             <View
               style={{
                 flexDirection: 'row',
                 paddingTop: 20,
               }}>
               <TouchableOpacity
-                style={styles.modalBtn}
+                style={[styles.modalBtn, { backgroundColor: '#EA4335' }]}
                 onPress={() => {
                   clearHistory();
                   setShowModal(!showModal);
@@ -83,7 +80,7 @@ export default function History({ navigation, route }) {
               </TouchableOpacity>
               <View style={{ paddingLeft: 20 }} />
               <TouchableOpacity
-                style={[styles.modalBtn, { backgroundColor: '#33bf5c' }]}
+                style={[styles.modalBtn, { backgroundColor: 'grey' }]}
                 onPress={() => {
                   setShowModal(!showModal);
                 }}>
@@ -142,7 +139,6 @@ const styles = StyleSheet.create({
   modalBtn: {
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#4285F4',
     borderRadius: 3,
     paddingHorizontal: 20,
     paddingVertical: 5

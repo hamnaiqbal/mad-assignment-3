@@ -26,7 +26,7 @@ export default function App() {
           options={{
             title: 'History',
             headerStyle: {
-              backgroundColor: '#33bf5c',
+              backgroundColor: '#4285F4',
             },
             headerTintColor: '#fff',
           }}
